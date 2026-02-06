@@ -3,8 +3,9 @@ import pickle
 import numpy as np
 
 # Load model
-with open( "logistic_model.pkl","rb") as file:
-model = pickle.load(file)
+
+with open("model.pkl", "rb") as file:
+    model = pickle.load(file)
 
 st.title("Logistic Regression Prediction App")
 
