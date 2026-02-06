@@ -1,9 +1,10 @@
 import streamlit as st
-import joblib
+import pickle
 import numpy as np
 
 # Load model
-model = joblib.load("logistic_model.pkl")
+with open( "logistic_model.pkl","rb") as file:
+model = pickle.load(file)
 
 st.title("Logistic Regression Prediction App")
 
@@ -22,3 +23,4 @@ if st.button("Predict"):
 
     st.success(f"Prediction: {prediction}")
     st.info(f"Probability of class 1: {probability:.2f}")
+
